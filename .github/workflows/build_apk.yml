@@ -19,14 +19,19 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies
+      - name: Install Ionic CLI
         run: npm install -g @ionic/cli
 
       - name: Install project dependencies
         run: npm install
 
-      - name: Install Capacitor Android
-        run: ionic cap add android
+      - name: Add Android platform if not present
+        run: |
+          if [ ! -d "android" ]; then
+            ionic cap add android
+          else
+            echo "Android platform already added."
+          fi
 
       - name: Build the app
         run: ionic build
