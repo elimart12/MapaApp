@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Datos del Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input [(ngModel)]="nombre"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Apellido</ion-label>
+    <ion-input [(ngModel)]="apellido"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Latitud</ion-label>
+    <ion-input type="number" [(ngModel)]="latitud"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Longitud</ion-label>
+    <ion-input type="number" [(ngModel)]="longitud"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" class="ion-margin-top" (click)="irAlMapa()">
+    Ver en Mapa
+  </ion-button>
+</ion-content>
